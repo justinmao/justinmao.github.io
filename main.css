@@ -1,9 +1,4 @@
-div {
-    font-family: Helvetica;
-    font-size: 20 px;
-}
-
-.center{
+html {
     position:absolute;
     height: X px;
     width: Y px;
@@ -11,4 +6,6 @@ div {
     top:50%;
     margin-top:- X/2 px;
     margin-left:- Y/2 px;
+    font-family: Helvetica;
+    font-size: 20 px;
 }
