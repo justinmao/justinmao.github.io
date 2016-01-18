@@ -1,0 +1,17 @@
+#main {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.circle {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 30px;
+	font-family: "Quicksand", sans-serif;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
