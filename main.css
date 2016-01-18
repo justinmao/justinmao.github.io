@@ -11,7 +11,8 @@ a {
 hr {
 	width: 100%;
 	height: 1px;
-	background: black;
+	background-color: black;
+	border-width: 0;
 }
 
 div {
