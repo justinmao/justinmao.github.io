@@ -22,7 +22,7 @@ body {
 	width: 200px;
 	height: 200px;
 	transform-style: preserve-3d;
-	animation: flip 4s infinite;
+	animation: flip 2s infinite;
 }
 
 .cube div {
@@ -60,23 +60,19 @@ body {
 	animation: color 8s infinite alternate;
 }
 .left {
-	background-color: white;
+	background-color: #ffd24d;
 	transform: rotateY(-90deg) translateX(-100px);
 	transform-origin: center left;
+	animation: color 8s infinite alternate;
+	
 }
 
 @keyframes flip {
-	25% {
-		transform: rotateX(-180deg);
-	}
 	50% {
-		transform: rotateZ(-180deg);
-	}
-	75% {
 		transform: rotateX(-180deg);
 	}
 	100% {
-		transform: rotateX(0deg);	
+		transform: rotateZ(-180deg);	
 	}
 }
 
