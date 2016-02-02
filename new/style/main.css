@@ -1,3 +1,9 @@
+html {
+	font-family: "Quicksand", sans-serif;
+	line-height: 50px;
+	text-align: center;
+}
+
 .main {
 	position: absolute;
 	top: 50%;
@@ -28,7 +34,7 @@
 
 .top {
 	background-color: #fef9d7;
-	transform: rotateX(-90deg) translateY(-25px);
+	transform: rotatey(180deg) rotatez(180deg) rotateX(-90deg) translateY(-25px);
 	transform-origin: top center;
 	transition-duration: .6s;
 }
