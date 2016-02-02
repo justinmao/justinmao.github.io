@@ -11,7 +11,7 @@
 	width: 200px;
 	height: 50px;
 	transform-style: preserve-3d;
-	transition-duration: .5s;
+	transition-duration: .6s;
 }
 
 .cube div {
@@ -23,14 +23,24 @@
 .front {
 	background-color: #ffecb3;
 	transform: translateZ(25px);
+	transition-duration: .6s;
 }
 
 .top {
-	background-color: #ffd24d;
+	background-color: #fef9d7;
 	transform: rotateX(-90deg) translateY(-25px);
 	transform-origin: top center;
+	transition-duration: .6s;
 }
 
 .cube:hover {
 	transform: rotateX(-90deg)
+}
+
+.cube:hover .front {
+	background-color: #d5c07b;
+}
+
+.cube:hover .top {
+	background-color: #ffecb3;
 }
