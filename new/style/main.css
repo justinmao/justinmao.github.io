@@ -1,52 +1,36 @@
-html {
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
-}
-
-p {
-	margin: 5px;
-}
-
-hr {
-	width: 100%;
-	height: 1px;
-	background-color: black;
-	border-width: 0px;
-	margin: 0px;
-}
-
-.title {
-	font-size: 70px;
-}
-
-.subtitle {
-	font-size: 18px;	
-}
-
-.button {
-	background-color: black;
-	color: white;
-	height: 50px;
-	flex: 1;
-	margin: 1px;
-	line-height: 50px;
-}
-
-#main {
+.main {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	
-	background-color: #f4f4f4;
-	width: 700px;
+	perspective: 1000px;
 }
 
-#links {
-	background-color: blue;
+.cube {
+	position: relative;
+	width: 200px;
 	height: 50px;
-	width: 700px;
-	margin-top: 30px;
-	display: flex;
-	align-items: center;
+	transform-style: preserve-3d;
+	transition-duration: .5s;
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 50px;
+}
+
+.front {
+	background-color: #ffecb3;
+	transform: translateZ(25px);
+}
+
+.top {
+	background-color: #ffd24d;
+	transform: rotateX(-90deg) translateY(-25px);
+	transform-origin: top center;
+}
+
+.cube:hover {
+	transform: rotateX(-90deg)
 }
