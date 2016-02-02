@@ -34,7 +34,7 @@ html {
 
 .top {
 	background-color: #fef9d7;
-	transform: rotatey(180deg) rotatez(180deg) rotateX(-90deg) translateY(-25px);
+	transform: rotateX(-90deg) rotateY(180deg) rotateZ(180deg) translateY(-25px);
 	transform-origin: top center;
 	transition-duration: .6s;
 }
