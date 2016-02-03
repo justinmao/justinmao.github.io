@@ -4,13 +4,8 @@ html {
 	line-height: 3em;
 	text-align: center;
 }
-span {
-	position:absolute; 
-	width:100%;
-	height:100%;
-	top:0;
-	left: 0;
-	z-index: 1;
+a {
+	color:inherit;
 }
 i {
 	transform: scale(1.6, 1.6);
