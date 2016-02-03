@@ -15,6 +15,10 @@ span {
 i {
 	transform: scale(1.6, 1.6);
 }
+#links {
+	display: flex;
+	justify-content: center;
+}
 .main {
 	position: absolute;
 	top: 50%;
@@ -23,8 +27,8 @@ i {
 }
 .title {
 	color: black;
-	font-size: 30px;
-	margin: 10px;
+	font-size: 48px;
+	margin: 0.5em;
 }
 .ref {
 	display: inline-block;
@@ -33,6 +37,7 @@ i {
 	height: 3em;
 	transform-style: preserve-3d;
 	transition-duration: .4s;
+	margin: 1px;
 }
 .ref div {
 	line-height: 50px;
@@ -68,6 +73,7 @@ i {
 	width: 3em;
 	transform-style: preserve-3d;
 	transition-duration: .4s;
+	margin: 1px;
 }
 .refsrc div {
 	line-height: 3em;
