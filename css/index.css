@@ -4,18 +4,21 @@
 }
 
 html {
+  height: 100%;
 }
 body {
+  height: 100%;
+  margin: 0;
   font-size: 14px;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
-
+#spacer {
+  height: 20%;
+}
 #main {
-  margin-top: 256px;
-  transition: margin-top 1s;
 }
 #banner {
   height: 300px;

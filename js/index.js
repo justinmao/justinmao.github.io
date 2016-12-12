@@ -7,7 +7,7 @@ $.preload("/resources/img2.jpg");
 
 $(document).ready(function() {
   $("#link-about").click(function() {
-    $("#main").css("margin-top", "12px");
+    $("#spacer").css("height", "0px");
     $("#banner").css("height", "100px").fadeOut(1000);
     $("#banner-about").delay(1000).fadeIn(1000);
 
