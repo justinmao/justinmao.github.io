@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Orator";
+  src: url("/resources/OratorStd.otf");
+}
+
+html {
+  height: 100%;
+}
+body {
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#banner {
+  height: 300px;
+  width: 600px;
+  background-image: url("/resources/img.jpg");
+}
+#header {
+  width: 600px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  font-family: "Orator", sans-serif;
+  color: #333333;
+  text-transform: uppercase;
+}
+#title {
+  margin-right: auto;
+}
+#links a {
+  margin-left: 5px;
+}
+#links a:hover {
+  color: #999999;
+}
