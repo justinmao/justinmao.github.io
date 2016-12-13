@@ -21,22 +21,46 @@ a {
 }
 #main {
 }
-#banner {
-  height: 300px;
-  width: 600px;
+#banner-container {
   margin-left: auto;
   margin-right: auto;
+  height: 300px;
+  width: 600px;
+  transition: height 1s;
+}
+#banner {
+  height: inherit;
   background-image: url("/resources/img.jpg");
   transition: height 1s;
+  z-index: 1;
 }
 #banner-about {
   display: none;
-  height: 100px;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  height: inherit;
   background-image: url("/resources/img2.jpg");
   transition: height 1s;
+  z-index: -1;
+}
+#banner-projects {
+  display: none;
+  height: inherit;
+  background-image: url("/resources/img3.jpg");
+  transition: height 1s;
+  z-index: -1;
+}
+#banner-resume {
+  display: none;
+  height: inherit;
+  background-image: url("/resources/img4.jpg");
+  transition: height 1s;
+  z-index: -1;
+}
+#banner-contact {
+  display: none;
+  height: inherit;
+  background-image: url("/resources/img5.jpg");
+  transition: height 1s;
+  z-index: -1;
 }
 #header {
   width: 600px;
@@ -69,4 +93,16 @@ a {
 }
 #about {
   display: none;
+}
+#projects {
+  display: none;
+}
+#resume {
+  display: none;
+}
+#contact {
+  display: none;
+}
+.freeze {
+  pointer-events: none;
 }
