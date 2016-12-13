@@ -11,7 +11,7 @@ function switchPage(newPage) {
     $("#links").removeClass("freeze");
   }, 2000);
 
-  if (currentPage == "home") {
+  if (currentPage == "main") {
     $("#spacer").css("height", "12px");
     $("#banner-container").css("height", "100px");
     $("#banner").css("height", "100px").fadeOut(1000);
@@ -29,21 +29,9 @@ function switchPage(newPage) {
   currentPage = newPage;
 }
 
-function reset() {
-  if (currentPage != "home") {
-    $("#main").fadeOut(1000);
-    setTimeout(function() {
-      window.location = "/";
-    }, 1000);
-  }
-}
-
 $(document).ready(function() {
-  $("#main").fadeIn(1000);
-  currentPage = "home";
-  $("#title").click(function() {
-    reset();
-  });
+  currentPage = "main";
+
   $("#link-about").click(function() {
     switchPage("about");
   });
