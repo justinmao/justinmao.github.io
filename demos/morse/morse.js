@@ -76,7 +76,7 @@ function next() {
   shadow = "";
   update();
 }
-function dot() {
+function dash() {
   if (!init) {
     $("#text").text("");
     init = 1;
@@ -93,7 +93,7 @@ function dot() {
   }
   update();
 }
-function dash() {
+function dot() {
   if (!init) {
     $("#text").text("");
     init = 1;
@@ -125,14 +125,21 @@ $(document).ready(function() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $("#text").text("tap: dot | swipe right: dash");
     $("#morse").text("swipe left: next character");
+
+    var container = document.getElementById("container");
+
+    Hammer(container).on("swipeleft", function() {
+      next();
+    });
+    Hammer(container).on("tap", function() {
+      dot();
+    });
+    Hammer(container).on("swiperight", function() {
+      dash();
+    });
+
+  } else {
+    // desktop mode message
   }
-  $(document).on("swipeleft", function() {
-    next();
-  });
-  $(document).on("tap", function() {
-    dot();
-  });
-  $(document).on("swiperight", function() {
-    dash();
-  });
+
 });
