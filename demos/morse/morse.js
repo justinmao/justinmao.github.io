@@ -62,7 +62,7 @@ var shadow = "";
 var morse = "";
 
 function trace(keycode) {
-  if (keycode == 65) {
+  if (keycode == 68) {
     morse += "T"; // "-" in the font file
     if (currentNode) {
       if (currentNode.dash) {
@@ -73,7 +73,7 @@ function trace(keycode) {
         shadow = "#";
       }
     }
-  } else if (keycode == 68) {
+  } else if (keycode == 65) {
     morse += "E"; // "." in the font file
     if (currentNode){
       if (currentNode.dot) {
