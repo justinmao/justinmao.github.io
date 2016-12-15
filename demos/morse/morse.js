@@ -140,8 +140,7 @@ $(document).ready(function() {
     Hammer(container).on("tap", function() {
       next();
     });
-
   } else {
-    // desktop mode message
+    $("#footer").show();
   }
 });

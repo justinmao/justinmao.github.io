@@ -47,6 +47,7 @@ html, body {
   word-wrap: break-word;
 }
 #footer {
+  display: none;
   position: absolute;
   margin-bottom: 10px;
   right: 0;
