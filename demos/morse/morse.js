@@ -61,58 +61,78 @@ var char = "";
 var shadow = "";
 var morse = "";
 
-function trace(keycode) {
-  if (keycode == 68) {
-    morse += "T"; // "-" in the font file
-    if (currentNode) {
-      if (currentNode.dash) {
-        currentNode = currentNode.dash;
-        shadow = currentNode.value;
-      } else {
-        currentNode = null;
-        shadow = "#";
-      }
-    }
-  } else if (keycode == 65) {
-    morse += "E"; // "." in the font file
-    if (currentNode){
-      if (currentNode.dot) {
-        currentNode = currentNode.dot;
-        shadow = currentNode.value;
-      } else {
-        currentNode = null;
-        shadow = "#";
-      }
+var init = 0;
+
+function update() {
+  $("#text").html(text + "<span>" + shadow + "</span>");
+  $("#morse").text(morse).css("font-family", "Morse");
+}
+
+// action functions
+function next() {
+  currentNode = morseTree;
+  morse += "$"; // "/" in the font file
+  text += shadow;
+  shadow = "";
+  update();
+}
+function dot() {
+  if (!init) {
+    $("#text").text("");
+    init = 1;
+  }
+  morse += "T"; // "-" in the font file
+  if (currentNode) {
+    if (currentNode.dash) {
+      currentNode = currentNode.dash;
+      shadow = currentNode.value;
+    } else {
+      currentNode = null;
+      shadow = "#";
     }
   }
+  update();
 }
-
-function nextChar() {
-  currentNode = morseTree;
-  char = shadow;
-  shadow = "";
-  morse += "$"; // "/" in the font file
-  return char;
+function dash() {
+  if (!init) {
+    $("#text").text("");
+    init = 1;
+  }
+  morse += "E"; // "." in the font file
+  if (currentNode) {
+    if (currentNode.dot) {
+      currentNode = currentNode.dot;
+      shadow = currentNode.value;
+    } else {
+      currentNode = null;
+      shadow = "#";
+    }
+  }
+  update();
 }
-
-var init = 0;
 
 $(document).ready(function() {
   $(document).keydown(function(e) {
     if (e.which == 32) { // space
-      // add character to output
-      text += nextChar();
-      text = text + shadow;
-      $("#text").text(text);
-      $("#morse").text(morse).css("font-family", "Morse");
-    } else if (e.which == 65 || e.which == 68) { // a or d
-      if (!init) {
-        $("#text").text("");
-        init = 1;
-      }
-      trace(e.which);
-      $("#text").html(text + "<span>" + shadow + "</span>");
-      $("#morse").text(morse).css("font-family", "Morse");
+      next();
+    } else if (e.which == 65) { // a
+      dot();
+    } else if (e.which == 68) { // d
+      dash();
     }
+  });
+  // mobile functionality
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    $("#text").text("tap: dot | swipe right: dash");
+    $("#morse").text("swipe left: next character");
+  }
+  $(document).on("swipeleft", function() {
+    next();
+  });
+  $(document).on("tap", function() {
+    dot();
+  });
+  $(document).on("swiperight", function() {
+    dash();
   });
 });
