@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Morse";
+  src: url("morse.ttf");
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+#container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+#text-container {
+  max-width: 600px;
+  text-align: center;
+  display: inline;
+}
+#text {
+  width: auto;
+  min-height: 54px;
+  max-width: 600px;
+  font-size: 48px;
+  color: #666666;
+  word-wrap: break-word;
+}
+#text span {
+  color: #FF9999;
+}
+#title {
+  font-size: 88px;
+  color: #222222;
+  text-transform: uppercase;
+  margin: 8px;
+}
+#morse {
+  min-height: 54px;
+  max-width: 600px;
+  font-size: 48px;
+  line-height: 48px;
+  color: #666666;
+  word-wrap: break-word;
+}
