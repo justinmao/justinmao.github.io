@@ -123,8 +123,8 @@ $(document).ready(function() {
   });
   // mobile functionality
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    $("#text").text("tap: dot | swipe right: dash");
-    $("#morse").text("swipe left: next character");
+    $("#text").text("swipe left: dot | swipe right: dash");
+    $("#morse").text("tap: next character");
     $("#text").css("font-size", "56px");
     $("#title").css("font-size", "128px");
     $("#morse").css("font-size", "56px");
@@ -134,10 +134,10 @@ $(document).ready(function() {
     Hammer(container).on("swipeleft", function() {
       next();
     });
-    Hammer(container).on("tap", function() {
+    Hammer(container).on("swiperight", function() {
       dot();
     });
-    Hammer(container).on("swiperight", function() {
+    Hammer(container).on("tap", function() {
       dash();
     });
 
