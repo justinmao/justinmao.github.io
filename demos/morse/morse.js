@@ -123,7 +123,7 @@ $(document).ready(function() {
   });
   // mobile functionality
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    $("#text").text("swipe left: dot | swipe right: dash");
+    $("#text").text("left: dot | right: dash");
     $("#morse").text("tap: next character");
     $("#text").css("font-size", "56px");
     $("#title").css("font-size", "128px");
