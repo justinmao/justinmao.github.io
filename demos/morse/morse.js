@@ -125,6 +125,9 @@ $(document).ready(function() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $("#text").text("tap: dot | swipe right: dash");
     $("#morse").text("swipe left: next character");
+    $("#text").css("font-size", "56px");
+    $("#title").css("font-size", "128px");
+    $("#morse").css("font-size", "56px");
 
     var container = document.getElementById("container");
 
