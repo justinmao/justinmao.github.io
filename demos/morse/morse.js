@@ -132,13 +132,13 @@ $(document).ready(function() {
     var container = document.getElementById("container");
 
     Hammer(container).on("swipeleft", function() {
-      next();
-    });
-    Hammer(container).on("swiperight", function() {
       dot();
     });
-    Hammer(container).on("tap", function() {
+    Hammer(container).on("swiperight", function() {
       dash();
+    });
+    Hammer(container).on("tap", function() {
+      next();
     });
 
   } else {
