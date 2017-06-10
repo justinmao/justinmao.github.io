@@ -63,6 +63,9 @@ a :hover {
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 36px;
   width: 36px;
   font-size: 26pt;
@@ -95,11 +98,18 @@ a :hover {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 50%;
+  height: 40%;
+  width: 126%;
 }
 
 #bottomhalf .button {
   font-size: 20px;
+}
+
+#bottomhalf p {
+  width: auto;
+  font-size: 9pt;
+  margin: 0px;
 }
 
 #about {
