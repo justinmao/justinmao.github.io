@@ -2,39 +2,65 @@
 <html>
   <head>
     <title>Justin Mao</title>
-    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fa2b370e76.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
   </head>
   <body>
-    <div id="spacer"></div>
-    <div id="main">
-      <div id="banner-container">
-        <div id="banner"></div>
-        <div id="banner-about"></div>
-        <div id="banner-projects"></div>
-        <div id="banner-resume"></div>
-        <div id="banner-contact"></div>
-      </div>
-      <div id="header">
-        <a id="title" href="#">justin mao</a>
-        <div id="links">
-          <a id="link-about" href="#">about</a>
-          <a id="link-projects" href="#">projects</a>
-          <a id="link-resume" href="#">resume</a>
-          <a id="link-contact" href="#">contact</a>
+    <div id="home">
+      <div id="container">
+        <div id="tophalf">
+          <div id="social">
+            <div class="button"><a href="https://github.com/justinmao"><i class="fa fa-github-square" aria-hidden="true"></i></a></div>
+            <div class="button"><a href="https://www.linkedin.com/in/justinmao/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></div>
+          </div>
+          <div id="links">
+            <div class="link"><a href="#about">ABOUT</a></div>
+            <div class="link"><a href="#projects">PROJECTS</a></div>
+            <div class="link"><a href="#resume">RESUME</a></div>
+          </div>
+        </div>
+        <div id="bottomhalf">
+          <div class="button"><a href="http://joymao.com"><i class="fa fa-paint-brush" aria-hidden="true"></i></a></div>
         </div>
       </div>
-      <div id="content">
-        <div id="about">
-          <p>text and stuff</p>
-        </div>
-        <div id="projects">
-        <p>text and stuff</p>
+    </div>
+    <div id="about">
+      <h1>ABOUT</h1>
+      <div id="travel">
+        <p>SHANGHAI</p>
+        <i class="fa fa-plane" aria-hidden="true"></i>
+        <p>TORONTO</p>
       </div>
-        <div id="resume"></div>
-        <div id="contact"></div>
-      </div>
+      <p>My name is Justin Mao.</p>
+      <p><b>I am a student currently studying computer science at the University of Toronto.</b> I enjoy working with all aspects of software, but I am especially interested in clean, effective web design and front-end development.</p>
+      <p>I love to see bits of creative work come together to create beautiful and elegant final products. That is why I hold myself to a high standard and make sure to pay attention to every detail in each component of my work.</p>
+      <p>You can get in touch with me via social media or <a href="mailto:justinmao@live.com">email</a>.</p>
+    </div>
+    <div id="projects">
+      <h1>PROJECTS</h1>
+        <p>
+          <b>PERSONAL WEBSITE</b> (this page!) - <a href="https://github.com/justinmao/justinmao.github.io"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
+          A portal to my projects and information, written in html and css. An old work in progress can be found <a href="https://github.com/justinmao/justinmao.github.io/tree/master/archive"><u>here</u></a>.
+        </p>
+        <p>
+          <b>QUICK PALETTE</b> - <a href="https://github.com/justinmao/palette"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
+          A tool for finding <i>k</i> dominant colors of any image using k-means clustering, written in javascript (Angular 2/Express/node.js), and originally python (scipy/flask). More information can be found on the repository <a href="https://github.com/justinmao/palette/blob/master/README.md"><u>readme</u></a>.
+        </p>
+      <h1>DEMOS</h1>
+      <p>
+        <b>MORSE DECODER</b> - <a href="https://github.com/justinmao/justinmao.github.io/tree/master/demos/morse"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
+        A simple tool for decoding dots and dashes into text, written in javascript/jquery. Also works on mobile, recognizing gestures!
+      </p>
+      <p>
+        <b>A SPINNING CUBE</b> - <a href="https://github.com/justinmao/justinmao.github.io/tree/master/demos/cube"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
+        An experiment in 3d animation using css.
+      </p>
+    </div>
+    <div id="resume">
+      <h1>RESUME</h1>
+      <h1><a href="resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></h1>
     </div>
   </body>
 </html>
