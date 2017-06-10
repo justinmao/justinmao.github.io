@@ -1,6 +1,6 @@
-if (screen.width <= 800) {
-  window.location = "http://m.jmao.co";
-}
+// if (screen.width <= 800) {
+//   window.location = "http://m.jmao.co";
+// }
 
 var currentPage;
 
@@ -33,7 +33,7 @@ function reset() {
   if (currentPage != "home") {
     $("#main").fadeOut(1000);
     setTimeout(function() {
-      window.location = "/";
+      window.location = "/archive";
     }, 1000);
   }
 }
