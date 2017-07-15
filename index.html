@@ -1,69 +1,132 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Justin Mao</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
-    <script src="https://use.fontawesome.com/fa2b370e76.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <!-- Smooth scroll provided from https://cferdinandi.github.io/smooth-scroll. -->
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
-    <div id="home">
-      <div id="container">
-        <div id="tophalf">
-          <div id="social">
-            <div class="button"><a href="https://github.com/justinmao"><i class="fa fa-github-square" aria-hidden="true"></i></a></div>
-            <div class="button"><a href="https://www.linkedin.com/in/justinmao/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></div>
-          </div>
-          <div id="links">
-            <div class="link"><a href="#about">ABOUT</a></div>
-            <div class="link"><a href="#projects">PROJECTS</a></div>
-            <div class="link"><a href="#resume">RESUME</a></div>
+    <header id="navbar">
+      <nav>
+        <div class="nav-section">
+          <span><a href="https://github.com/justinmao">GITHUB</a></span>
+          <span><a href="https://www.linkedin.com/in/justinmao/">LINKEDIN</a></span>
+        </div>
+        <div class="nav-section">
+          <span id="nav-about">ABOUT</span>
+          <span id="nav-projects">PROJECTS</span>
+          <span id="nav-resume">RESUME</span>
+        </div>
+      </nav>
+      <div id="top-arrow"><p>^</p></div>
+    </header>
+    <main>
+      <div id="home">
+        <div id="title">
+          <h1>JUSTIN MAO</h2>
+          <h2>STUDENT &nbsp; &middot; &nbsp; PROGRAMMER &nbsp; &middot; &nbsp; DESIGNER</h2>
+        </div>
+        <footer><div id="bottom-arrow"><p>^</p></div></footer>
+      </div>
+      <div id="about">
+        <h1>Hi.</h1>
+        <h2>My name is Justin.<br></h2>
+        <h3>I'm from <span id="city">Michigan.</span></h3>
+        <span class="separator">&middot; &middot; &middot;</span>
+        <div id="about-me">
+          <h4>I am</h4>
+          <div class="vr"></div>
+          <div id="about-me-list">
+            <p>currently studying computer science at the University of Toronto.</p>
+            <p>passionate about programming, design, and music.</p>
+            <p>all about simplicity, efficiency, and elegance. It shows in my work.</p>
           </div>
         </div>
-        <div id="bottomhalf">
-          <div class="button"><a href="http://joymao.com"><i class="fa fa-paint-brush" aria-hidden="true"></i></a></div>
-          <p>ARTWORK BY JOY MAO</p>
-        </div>
       </div>
-    </div>
-    <div id="about">
-      <h1>ABOUT</h1>
-      <div id="travel">
-        <p>SHANGHAI</p>
-        <i class="fa fa-plane" aria-hidden="true"></i>
-        <p>TORONTO</p>
+      <div id="projects">
       </div>
-      <p>My name is Justin Mao.</p>
-      <p><b>I am a student currently studying computer science at the University of Toronto.</b> I enjoy working with all aspects of software, but I am especially interested in clean, effective web design and front-end development.</p>
-      <p>I love to see bits of creative work come together to create beautiful and elegant final products. That is why I hold myself to a high standard and make sure to pay attention to every detail in each component of my work.</p>
-      <p>You can get in touch with me via social media or <a href="mailto:justinmao@live.com">email</a>.</p>
-    </div>
-    <div id="projects">
-      <h1>PROJECTS</h1>
-        <p>
-          <b>PERSONAL WEBSITE</b> (this page!) - <a href="https://github.com/justinmao/justinmao.github.io"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
-          A portal to my projects and information, written in html and css. An old work in progress can be found <a href="https://github.com/justinmao/justinmao.github.io/tree/master/archive"><u>here</u></a>.
-        </p>
-        <p>
-          <b>QUICK PALETTE</b> - <a href="http://104.236.97.183/"><i class="fa fa-globe" aria-hidden="true"></i></a> <a href="https://github.com/justinmao/palette"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
-          A tool for finding <i>k</i> dominant colors of any image using k-means clustering, written in javascript (Angular 2/Express/node.js), and originally python (scipy/flask). More information can be found on the repository <a href="https://github.com/justinmao/palette/blob/master/README.md"><u>readme</u></a>.
-        </p>
-      <h1>DEMOS</h1>
-      <p>
-        <b>MORSE DECODER</b> - <a href="/demos/morse"><i class="fa fa-globe" aria-hidden="true"></i></a> <a href="https://github.com/justinmao/justinmao.github.io/tree/master/demos/morse"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
-        A simple tool for decoding dots and dashes into text, written in javascript/jquery. Also works on mobile, recognizing gestures!
-      </p>
-      <p>
-        <b>A SPINNING CUBE</b> - <a href="/demos/cube"><i class="fa fa-globe" aria-hidden="true"></i></a> <a href="https://github.com/justinmao/justinmao.github.io/tree/master/demos/cube"><i class="fa fa-git-square" aria-hidden="true"></i></a><br>
-        An experiment in 3d animation using css.
-      </p>
-    </div>
-    <div id="resume">
-      <h1>RESUME</h1>
-      <h1><a href="resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></h1>
-    </div>
+      <div id="resume">
+        <table>
+          <tr>
+            <th><a href="resume.pdf">&gt; &nbsp; PDF</a></th>
+          </tr>
+          <tr>
+            <th>WORK EXPERIENCE</th>
+          </tr>
+          <tr>
+            <td>June 2017 - Present</td>
+            <td>
+              <p><b>SOFTWARE ENGINEERING INTERN</b></p>
+              <p>Nissan Motors (Dongfeng Nissan Passenger Vehicle Company)</p>
+              <p>Guangzhou, Guangdong, China</p>
+            </td>
+          </tr>
+          <tr>
+            <td>November 2013 - January 2014 </td>
+            <td>
+              <p><b>GRAPHIC DESIGN INTERN</b></p>
+              <p>In the Cut (ITC) Integrated Marketing</p>
+              <p>Shanghai, Shanghai, China</p>
+            </td>
+          </tr>
+          <tr>
+            <th>EDUCATION</th>
+          </tr>
+          <tr>
+            <td>September 2014 - Present</td>
+            <td>
+              <p><b>HONOURS BSC (SPECIALIST IN COMPUTER SCIENCE)</b></p>
+              <p>University of Toronto</p>
+              <p><i>Expected graduation in June, 2018.</i></p>
+            </td>
+          </tr>
+          <tr>
+            <td>August 2012 - May 2014</td>
+            <td>
+              <p><b>INTERNATIONAL BACCALAUREATE (IB) DIPLOMA</b></p>
+              <p>Shanghai American School</p>
+              <p><i>Higher levels in physics, visual arts, and literature.</i></p>
+            </td>
+          </tr>
+          <tr>
+            <th>EXTRACURRICULARS</th>
+          </tr>
+          <tr>
+            <td>August 2016 - Present</td>
+            <td>
+              <p><b>CREATIVE &amp; MEDIA DIRECTOR</b></p>
+              <p>Jane Goodall's Roots &amp; Shoots: UofT Chapter</p>
+            </td>
+          </tr>
+          <tr>
+            <td>December 2014 - Present</td>
+            <td>
+              <p><b>GENERAL MEMBER</b></p>
+              <p>Canadian Asian Student Society</p>
+            </td>
+          </tr>
+          <tr>
+            <th>VOLUNTEER WORK</th>
+          </tr>
+          <tr>
+            <td>October 2013</td>
+            <td>
+              <p><b>STUDENT LEADER/VOLUNTEER</b></p>
+              <p>Habitat for Humanity</p>
+              <p>Bali, Indonesia</p>
+            </td>
+          </tr>
+          <tr>
+            <td>March 2011</td>
+            <td>
+              <p><b>VOLUNTEER</b></p>
+              <p>Habitat for Humanity</p>
+              <p>Sri Lanka</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
   </body>
 </html>
