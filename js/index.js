@@ -4,6 +4,7 @@ var currentPage = 0;
 var didScroll = false;
 var currentCity = 0;
 var citySwapInit = 0;
+var lethargy = new Lethargy(7, 10, 0.1);
 
 // LOAD
 window.onload = function() {
@@ -11,10 +12,7 @@ window.onload = function() {
   initHome();
 
   // Scroll listeners
-  document.getElementById('home').addEventListener('wheel', wheelScroll);
-  document.getElementById('about').addEventListener('wheel', wheelScroll);
-  document.getElementById('projects').addEventListener('wheel', wheelScroll);
-  document.getElementById('resume').addEventListener('wheel', wheelScroll);
+  window.addEventListener('wheel', wheelScroll);
 
   // Click listeners
   document.getElementById('top-arrow').addEventListener('click', function() {
@@ -66,7 +64,8 @@ function deinitHome() {
 }
 
 function wheelScroll() {
-  if (!didScroll) {
+  console.log(lethargy.check(event));
+  if (!didScroll && lethargy.check(event) != false) {
     var delta;
     if (event.wheelDelta){
       delta = event.wheelDelta;
@@ -81,7 +80,7 @@ function wheelScroll() {
     didScroll = true;
     setTimeout(function() {
       didScroll = false;
-    }, 1200);
+    }, 300);
   }
 }
 
