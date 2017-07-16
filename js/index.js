@@ -14,6 +14,15 @@ window.onload = function() {
   // Scroll listeners
   window.addEventListener('wheel', wheelScroll);
 
+  // Keydown listeners
+  document.onkeydown = function(event) {
+    if (event.keyCode == '38') {
+      scrollUp();
+    } else if (event.keyCode == '40') {
+      scrollDown();
+    }
+  };
+
   // Click listeners
   document.getElementById('top-arrow').addEventListener('click', function() {
     scrollToPage(0);
