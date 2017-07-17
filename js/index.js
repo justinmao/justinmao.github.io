@@ -1,9 +1,17 @@
 // GLOBALS
-var MAX_PAGE_INDEX = 3;
+const appendix = {
+  home: 0,
+  about: 1,
+  skills: 2,
+  projects: 3,
+  resume: 4
+}
+const MAX_PAGE_INDEX = 4;
 var currentPage = 0;
 var didScroll = false;
 var currentCity = 0;
 var citySwapInit = 0;
+var deinitAboutComplete = 1;
 var lethargy = new Lethargy(7, 10, 0.1);
 
 // LOAD
@@ -25,19 +33,22 @@ window.onload = function() {
 
   // Click listeners
   document.getElementById('top-arrow').addEventListener('click', function() {
-    scrollToPage(0);
+    scrollToPage(appendix.home);
   });
   document.getElementById('bottom-arrow').addEventListener('click', function() {
     scrollDown();
   });
+  document.getElementById('continue-arrow').addEventListener('click', function() {
+    scrollDown();
+  });
   document.getElementById('nav-about').addEventListener('click', function() {
-    scrollToPage(1);
+    scrollToPage(appendix.about);
   });
   document.getElementById('nav-projects').addEventListener('click', function() {
-    scrollToPage(2);
+    scrollToPage(appendix.projects);
   });
   document.getElementById('nav-resume').addEventListener('click', function() {
-    scrollToPage(3);
+    scrollToPage(appendix.resume);
   });
 };
 
@@ -52,6 +63,7 @@ function initHome() {
   document.getElementById('top-arrow').style.opacity = 0;
   document.getElementById('bottom-arrow').style.pointerEvents = 'auto';
   document.getElementById('bottom-arrow').style.opacity = 0;
+  document.getElementById('continue-arrow').style.opacity = 0;
   setTimeout(function() {
     document.getElementById('title').style.opacity = 1;
   }, 500);
@@ -72,9 +84,30 @@ function deinitHome() {
   }, 1000);
 }
 
+function initAbout() {
+  if (citySwapInit == 0) startCitySwap();
+  setTimeout(function() {
+    if (deinitAboutComplete == 1) {
+      document.getElementById('continue-arrow').style.pointerEvents = 'auto';
+      document.getElementById('continue-arrow').style.opacity = 1;
+      document.getElementById('continue-arrow').style.transform = 'translateY(12px)';
+    }
+  }, 1000);
+}
+
+function deinitAbout() {
+  deinitAboutComplete = 0;
+  document.getElementById('continue-arrow').style.pointerEvents = 'none';
+  document.getElementById('continue-arrow').style.opacity = 0;
+  document.getElementById('continue-arrow').style.transform = 'translateY(-12px)';
+  // Make sure deinitializing is complete before allowing initialization.
+  setTimeout(function() {
+    deinitAboutComplete = 1;
+  }, 1000);
+}
+
 function wheelScroll() {
-  console.log(lethargy.check(event));
-  if (!didScroll && lethargy.check(event) != false) {
+  if (lethargy.check(event) != false && !didScroll) {
     var delta;
     if (event.wheelDelta){
       delta = event.wheelDelta;
@@ -94,49 +127,30 @@ function wheelScroll() {
 }
 
 function scrollToPage(pageNumber) {
-  if (pageNumber == 0) {
-    initHome();
-  } else if (pageNumber > 0) {
-    deinitHome();
-    if (pageNumber == 1) {
-      if (citySwapInit == 0) citySwap();
+  if (pageNumber >= appendix.home && pageNumber <= MAX_PAGE_INDEX) {
+    if (pageNumber == appendix.home) initHome();
+    else deinitHome();
+    if (pageNumber == appendix.about) initAbout();
+    else deinitAbout();
     }
-    if (currentPage <= 1 && pageNumber >= 2) {
+    if (currentPage >= appendix.projects && pageNumber <= appendix.skills) {
+      document.getElementById('navbar').style.color = '#353135';
+    } else if (currentPage <= appendix.skills && pageNumber >= appendix.projects) {
       document.getElementById('navbar').style.color = 'white';
     }
-  }
-  if (currentPage >= 2 && pageNumber <= 1) {
-    document.getElementById('navbar').style.color = '#353135';
-  }
-  currentPage = pageNumber;
-  smoothScroll.animateScroll(window.innerHeight * currentPage);
+    currentPage = pageNumber;
+    smoothScroll.animateScroll(window.innerHeight * currentPage);
 }
 
 function scrollUp() {
-  if (currentPage > 0) {
-    if (currentPage == 1) {
-      initHome();
-    } else if (currentPage == 2) {
-      if (citySwapInit == 0) citySwap();
-      document.getElementById('navbar').style.color = '#353135';
-    }
-    smoothScroll.animateScroll(window.innerHeight * --currentPage);
-  }
+  scrollToPage(currentPage - 1);
 }
 
 function scrollDown() {
-  if (currentPage < MAX_PAGE_INDEX) {
-    if (currentPage == 0) {
-      deinitHome();
-      if (citySwapInit == 0) citySwap();
-    } else if (currentPage >= 1) {
-      document.getElementById('navbar').style.color = 'white';
-    }
-    smoothScroll.animateScroll(window.innerHeight * ++currentPage);
-  }
+  scrollToPage(currentPage + 1);
 }
 
-function citySwap() {
+function startCitySwap() {
   city = document.getElementById('city');
   if (citySwapInit == 0) {
     city.style.color = '#57A076';
