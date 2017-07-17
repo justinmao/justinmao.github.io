@@ -96,13 +96,13 @@ function initAbout() {
 }
 
 function deinitAbout() {
-  deinitAboutComplete = 0;
+  --deinitAboutComplete;
   document.getElementById('continue-arrow').style.pointerEvents = 'none';
   document.getElementById('continue-arrow').style.opacity = 0;
   document.getElementById('continue-arrow').style.transform = 'translateY(-12px)';
   // Make sure deinitializing is complete before allowing initialization.
   setTimeout(function() {
-    deinitAboutComplete = 1;
+    ++deinitAboutComplete;
   }, 1000);
 }
 
