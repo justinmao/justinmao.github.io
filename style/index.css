@@ -257,7 +257,7 @@ footer {
   color: #E7CBC7;
 }
 
-#about footer {
+footer {
   height: 64px;
   bottom: calc(0% + 12px);
 }
