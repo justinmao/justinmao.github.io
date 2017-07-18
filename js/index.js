@@ -12,6 +12,7 @@ var didScroll = false;
 var currentCity = 0;
 var citySwapInit = 0;
 var deinitAboutComplete = 1;
+var deinitSkillsComplete = 1;
 var lethargy = new Lethargy(7, 10, 0.1);
 
 // LOAD
@@ -38,7 +39,7 @@ window.onload = function() {
   document.getElementById('bottom-arrow').addEventListener('click', function() {
     scrollDown();
   });
-  document.getElementById('continue-arrow').addEventListener('click', function() {
+  document.getElementById('about-next-arrow').addEventListener('click', function() {
     scrollDown();
   });
   document.getElementById('nav-about').addEventListener('click', function() {
@@ -63,7 +64,6 @@ function initHome() {
   document.getElementById('top-arrow').style.opacity = 0;
   document.getElementById('bottom-arrow').style.pointerEvents = 'auto';
   document.getElementById('bottom-arrow').style.opacity = 0;
-  document.getElementById('continue-arrow').style.opacity = 0;
   setTimeout(function() {
     document.getElementById('title').style.opacity = 1;
   }, 500);
@@ -88,21 +88,41 @@ function initAbout() {
   if (citySwapInit == 0) startCitySwap();
   setTimeout(function() {
     if (deinitAboutComplete == 1) {
-      document.getElementById('continue-arrow').style.pointerEvents = 'auto';
-      document.getElementById('continue-arrow').style.opacity = 1;
-      document.getElementById('continue-arrow').style.transform = 'translateY(12px)';
+      document.getElementById('about-next-arrow').style.pointerEvents = 'auto';
+      document.getElementById('about-next-arrow').style.opacity = 1;
+      document.getElementById('about-next-arrow').style.transform = 'translateY(12px)';
     }
   }, 1000);
 }
 
 function deinitAbout() {
   --deinitAboutComplete;
-  document.getElementById('continue-arrow').style.pointerEvents = 'none';
-  document.getElementById('continue-arrow').style.opacity = 0;
-  document.getElementById('continue-arrow').style.transform = 'translateY(-12px)';
+  document.getElementById('about-next-arrow').style.pointerEvents = 'none';
+  document.getElementById('about-next-arrow').style.opacity = 0;
+  document.getElementById('about-next-arrow').style.transform = 'translateY(-12px)';
   // Make sure deinitializing is complete before allowing initialization.
   setTimeout(function() {
     ++deinitAboutComplete;
+  }, 1000);
+}
+
+function initSkills() {
+  setTimeout(function() {
+    if (deinitSkillsComplete == 1) {
+      document.getElementById('skills-next-arrow').style.pointerEvents = 'auto';
+      document.getElementById('skills-next-arrow').style.opacity = 1;
+      document.getElementById('skills-next-arrow').style.transform = 'translateY(12px)';
+    }
+  }, 1000);
+}
+
+function deinitSkills() {
+  --deinitSkillsComplete;
+  document.getElementById('skills-next-arrow').style.pointerEvents = 'none';
+  document.getElementById('skills-next-arrow').style.opacity = 0;
+  document.getElementById('skills-next-arrow').style.transform = 'translateY(-12px)';
+  setTimeout(function() {
+    ++deinitSkillsComplete;
   }, 1000);
 }
 
@@ -132,7 +152,8 @@ function scrollToPage(pageNumber) {
     else deinitHome();
     if (pageNumber == appendix.about) initAbout();
     else deinitAbout();
-    }
+    if (pageNumber == appendix.skills) initSkills();
+    else deinitSkills();
     if (currentPage >= appendix.projects && pageNumber <= appendix.skills) {
       document.getElementById('navbar').style.color = '#353135';
     } else if (currentPage <= appendix.skills && pageNumber >= appendix.projects) {
@@ -140,6 +161,7 @@ function scrollToPage(pageNumber) {
     }
     currentPage = pageNumber;
     smoothScroll.animateScroll(window.innerHeight * currentPage);
+  }
 }
 
 function scrollUp() {
