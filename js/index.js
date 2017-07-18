@@ -42,10 +42,6 @@ window.onload = function() {
   document.getElementById('about-next-arrow').addEventListener('click', function() {
     scrollDown();
   });
-  document.getElementById('skills-next-arrow').addEventListener('click', function() {
-    scrollDown();
-  });
-
   var nextArrows = document.getElementsByClassName("example");
   for (var i = 0; i < nextArrows.length; ++i) {
     nextArrows[i].addEventListener('click', function() {
