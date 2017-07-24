@@ -124,6 +124,7 @@ main {
   /*border: 1px solid #353135;*/
   border-radius: 50%;
   transition: 0.6s;
+  transform: translateY(-24px);
 }
 
 #home {

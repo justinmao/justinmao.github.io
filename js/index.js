@@ -6,6 +6,7 @@ const appendix = {
   projects: 3,
   resume: 4
 }
+const reverseAppendix = ['home', 'about', 'skills', 'projects', 'resume'];
 const MAX_PAGE_INDEX = 4;
 var currentPage = 0;
 var didScroll = false;
@@ -19,9 +20,6 @@ var lethargy = new Lethargy(7, 10, 0.1);
 window.onload = function() {
   // Initial animations
   initHome();
-
-  // Sidebar dot selector placement
-  document.getElementById('sidebar-dot-selector').style.transform = 'translateY(-24px)';
 
   // Scroll listeners
   window.addEventListener('wheel', wheelScroll);
@@ -186,6 +184,14 @@ function scrollToPage(pageNumber) {
     setTimeout(function() {
       document.getElementById('sidebar-dot-selector-bouncing-container-for-adam').style.transform = 'translateX(0px)';
     }, 0300);
+    // Momentum
+    var targetDot = document.getElementById('sidebar-dot-' + reverseAppendix[pageNumber]);
+    setTimeout(function() {
+      targetDot.style.transform = 'translateX(3px)';
+      setTimeout(function() {
+        targetDot.style.transform = 'translateX(0px)';
+      }, 0350);
+    }, 0400);
     currentPage = pageNumber;
     smoothScroll.animateScroll(window.innerHeight * currentPage);
 
