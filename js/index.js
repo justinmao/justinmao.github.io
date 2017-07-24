@@ -67,6 +67,7 @@ window.onbeforeunload = function (){
 // FUNCTIONS
 function initHome() {
   document.getElementById('sidebar').style.opacity = 0;
+  document.getElementById('sidebar-dot-selector-bouncing-container-for-adam').style.opacity = 0;
   document.getElementById('top-arrow').style.pointerEvents = 'none';
   document.getElementById('top-arrow').style.opacity = 0;
   document.getElementById('bottom-arrow').style.pointerEvents = 'auto';
@@ -82,6 +83,7 @@ function initHome() {
 
 function deinitHome() {
   document.getElementById('sidebar').style.opacity = 1;
+  document.getElementById('sidebar-dot-selector-bouncing-container-for-adam').style.opacity = 1;
   document.getElementById('title').style.opacity = 0;
   document.getElementById('bottom-arrow').style.pointerEvents = 'none';
   document.getElementById('bottom-arrow').style.transform = 'translateY(-24px)'
@@ -168,17 +170,22 @@ function scrollToPage(pageNumber) {
       for (var i = 0; i < dots.length; ++i) {
         dots[i].style.backgroundColor = '#353135';
       }
-      document.getElementById('sidebar-dot-selector').style.borderColor = '#353135';
+      document.getElementById('sidebar-dot-selector').style.backgroundColor = '#353135';
     } else if (currentPage <= appendix.skills && pageNumber >= appendix.projects) {
       document.getElementById('navbar').style.color = 'white';
       var dots = document.getElementsByClassName('sidebar-dot');
       for (var i = 0; i < dots.length; ++i) {
         dots[i].style.backgroundColor = 'white';
       }
-      document.getElementById('sidebar-dot-selector').style.borderColor = 'white';
+      document.getElementById('sidebar-dot-selector').style.backgroundColor = 'white';
     }
     // Shift sidebar selector
     document.getElementById('sidebar-dot-selector').style.transform = 'translateY(' + ((pageNumber - 2) * 12) + 'px)';
+    // Bounce
+    document.getElementById('sidebar-dot-selector-bouncing-container-for-adam').style.transform = 'translateX(-6px)';
+    setTimeout(function() {
+      document.getElementById('sidebar-dot-selector-bouncing-container-for-adam').style.transform = 'translateX(0px)';
+    }, 0300);
     currentPage = pageNumber;
     smoothScroll.animateScroll(window.innerHeight * currentPage);
 
