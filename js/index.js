@@ -39,10 +39,7 @@ window.onload = function() {
   document.getElementById('bottom-arrow').addEventListener('click', function() {
     scrollDown();
   });
-  document.getElementById('about-next-arrow').addEventListener('click', function() {
-    scrollDown();
-  });
-  var nextArrows = document.getElementsByClassName("example");
+  var nextArrows = document.getElementsByClassName("next-arrow");
   for (var i = 0; i < nextArrows.length; ++i) {
     nextArrows[i].addEventListener('click', function() {
       scrollDown();
