@@ -91,13 +91,12 @@ main {
   background-position: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 #title {
   opacity: 0;
-  height: 100%;
-  width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
