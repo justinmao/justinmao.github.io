@@ -69,11 +69,15 @@ function initHome() {
   document.getElementById('bottom-arrow').style.pointerEvents = 'auto';
   document.getElementById('bottom-arrow').style.opacity = 0;
   setTimeout(function() {
-    document.getElementById('title').style.opacity = 1;
+    if (currentPage == appendix.home) {
+      document.getElementById('title').style.opacity = 1;
+    }
   }, 500);
   setTimeout(function() {
-    document.getElementById('bottom-arrow').style.opacity = 1;
-    document.getElementById('bottom-arrow').style.transform = 'translateY(24px)';
+    if (currentPage == appendix.home) {
+      document.getElementById('bottom-arrow').style.opacity = 1;
+      document.getElementById('bottom-arrow').style.transform = 'translateY(24px)';
+    }
   }, 1500);
 }
 
