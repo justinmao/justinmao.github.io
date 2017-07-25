@@ -16,8 +16,9 @@ var lethargy = new Lethargy(7, 10, 0.1);
 
 // LOAD
 window.onload = function() {
-  // Initial animations
+  // Initial setup
   initHome();
+  checkWindowSize();
 
   // Scroll listeners
   window.addEventListener('wheel', wheelScroll);
@@ -56,8 +57,22 @@ window.onload = function() {
 };
 
 // UNLOAD
-window.onbeforeunload = function (){
+window.onbeforeunload = function() {
   window.scrollTo(0, 0);
+}
+
+// SIZING
+window.onresize = checkWindowSize;
+
+function checkWindowSize() {
+  if ((window.innerHeight < 750 || window.innerWidth < 675)) {
+    document.getElementById('desktop-content').style.display = 'none';
+    document.getElementById('mobile-content').style.display = 'flex';
+    document.getElementById('current-resolution').innerHTML = 'CURRENT: ' + window.innerWidth + 'x' + window.innerHeight + ' PX';
+  } else {
+    document.getElementById('desktop-content').style.display = 'flex';
+    document.getElementById('mobile-content').style.display = 'none';
+  }
 }
 
 // FUNCTIONS

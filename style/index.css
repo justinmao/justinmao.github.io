@@ -2,14 +2,21 @@
 
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
+  overflow: hidden;
+}
+
+#desktop-content {
+  height: 100%;
+  width: 100%;
   min-width: 675px;
   min-height: 376px;
-  overflow: hidden;
 }
 
 header {
@@ -80,6 +87,7 @@ nav a {
 
 main {
   height: 100%;
+  width: 100%;
 }
 
 #sidebar {
@@ -458,4 +466,26 @@ footer {
 
 #resume td p u {
   text-decoration: none;
+}
+
+#mobile-content {
+  height: 100%;
+  width: 100%;
+  background-color: #353135;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#mobile-content h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  margin: 8px;
+}
+
+#mobile-content p {
+  font-family: 'Lato', sans-serif;
+  margin: 2px;
 }
