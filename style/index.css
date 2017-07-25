@@ -30,11 +30,13 @@ header {
 #top-arrow {
   pointer-events: none;
   opacity: 0;
+  height: 64px;
+  width: 100%;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, color 1s;
 }
 
 #top-arrow p {
@@ -48,7 +50,6 @@ header {
 }
 
 nav {
-  position: fixed;
   width: 100%;
   min-width: 675px;
   display: flex;
@@ -117,7 +118,6 @@ main {
 }
 
 #sidebar-dot-selector {
-  position: fixed;
   height: 4px;
   width: 4px;
   background-color: #353135;
@@ -167,7 +167,7 @@ main {
 
 footer {
   height: 64px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   min-width: 675px;
   display: flex;
@@ -302,7 +302,6 @@ footer {
 
 .next-arrow {
   opacity: 0;
-  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -402,33 +401,6 @@ footer {
   margin-left: 2px;
   background-color: white;
   border: 1px solid #BBBBBB;
-}
-
-#projects-arrow {
-  opacity: 0;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-#projects-arrow {
-  cursor: pointer;
-}
-
-#projects-arrow span {
-  color: #353135;
-  font-family: 'Lato', sans-serif;
-  font-size: 1em;
-}
-
-#projects-arrow p {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  font-weight: bold;
-  transform: scale(1, -1);
 }
 
 #projects {

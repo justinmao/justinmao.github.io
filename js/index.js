@@ -155,6 +155,7 @@ function scrollToPage(pageNumber) {
     else deinitSkills();
     if (currentPage >= appendix.projects && pageNumber <= appendix.skills) {
       document.getElementById('navbar').style.color = '#353135';
+      document.getElementById('top-arrow').style.color = '#353135';
       var dots = document.getElementsByClassName('sidebar-dot');
       for (var i = 0; i < dots.length; ++i) {
         dots[i].style.backgroundColor = '#353135';
@@ -162,6 +163,7 @@ function scrollToPage(pageNumber) {
       document.getElementById('sidebar-dot-selector').style.backgroundColor = '#353135';
     } else if (currentPage <= appendix.skills && pageNumber >= appendix.projects) {
       document.getElementById('navbar').style.color = 'white';
+      document.getElementById('top-arrow').style.color = 'white';
       var dots = document.getElementsByClassName('sidebar-dot');
       for (var i = 0; i < dots.length; ++i) {
         dots[i].style.backgroundColor = 'white';
