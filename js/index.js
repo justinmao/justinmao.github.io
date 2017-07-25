@@ -72,6 +72,8 @@ function checkWindowSize() {
   } else {
     document.getElementById('desktop-content').style.display = 'flex';
     document.getElementById('mobile-content').style.display = 'none';
+    // Return to page without animated scroll
+    window.scrollTo(0, window.innerHeight * currentPage);
   }
 }
 
@@ -206,7 +208,6 @@ function scrollToPage(pageNumber) {
     }, 0400);
     currentPage = pageNumber;
     smoothScroll.animateScroll(window.innerHeight * currentPage);
-
   }
 }
 
