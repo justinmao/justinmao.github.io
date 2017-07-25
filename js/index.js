@@ -12,8 +12,6 @@ var currentPage = 0;
 var didScroll = false;
 var currentCity = 0;
 var citySwapInit = 0;
-var deinitAboutComplete = 1;
-var deinitSkillsComplete = 1;
 var lethargy = new Lethargy(7, 10, 0.1);
 
 // LOAD
@@ -87,15 +85,17 @@ function deinitHome() {
   document.getElementById('bottom-arrow').style.transform = 'translateY(-24px)'
   document.getElementById('bottom-arrow').style.opacity = 0;
   setTimeout(function() {
-    document.getElementById('top-arrow').style.pointerEvents = 'auto';
-    document.getElementById('top-arrow').style.opacity = 1;
+    if (currentPage != appendix.home) {
+      document.getElementById('top-arrow').style.pointerEvents = 'auto';
+      document.getElementById('top-arrow').style.opacity = 1;
+    }
   }, 1000);
 }
 
 function initAbout() {
   if (citySwapInit == 0) startCitySwap();
   setTimeout(function() {
-    if (deinitAboutComplete == 1) {
+    if (currentPage == appendix.about) {
       document.getElementById('about-next-arrow').style.pointerEvents = 'auto';
       document.getElementById('about-next-arrow').style.opacity = 1;
       document.getElementById('about-next-arrow').style.transform = 'translateY(12px)';
@@ -104,19 +104,14 @@ function initAbout() {
 }
 
 function deinitAbout() {
-  --deinitAboutComplete;
   document.getElementById('about-next-arrow').style.pointerEvents = 'none';
   document.getElementById('about-next-arrow').style.opacity = 0;
   document.getElementById('about-next-arrow').style.transform = 'translateY(-12px)';
-  // Make sure deinitializing is complete before allowing initialization.
-  setTimeout(function() {
-    ++deinitAboutComplete;
-  }, 1000);
 }
 
 function initSkills() {
   setTimeout(function() {
-    if (deinitSkillsComplete == 1) {
+    if (currentPage == appendix.skills) {
       document.getElementById('skills-next-arrow').style.pointerEvents = 'auto';
       document.getElementById('skills-next-arrow').style.opacity = 1;
       document.getElementById('skills-next-arrow').style.transform = 'translateY(12px)';
@@ -125,13 +120,9 @@ function initSkills() {
 }
 
 function deinitSkills() {
-  --deinitSkillsComplete;
   document.getElementById('skills-next-arrow').style.pointerEvents = 'none';
   document.getElementById('skills-next-arrow').style.opacity = 0;
   document.getElementById('skills-next-arrow').style.transform = 'translateY(-12px)';
-  setTimeout(function() {
-    ++deinitSkillsComplete;
-  }, 1000);
 }
 
 function wheelScroll() {
