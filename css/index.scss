@@ -272,9 +272,12 @@ hr {
     }
     .box {
       display: flex;
-      flex-direction: column;
-      max-height: 65%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-height: none;
       .project {
+        width: calc(50% - 6px);
         padding: 12px 0;
         border-bottom: 1px solid $black;
         .project-header {
@@ -283,12 +286,12 @@ hr {
           flex-direction: column;
           .title {
             h2 {
-              font-size: 1.4em;
+              font-size: 1em;
               font-weight: normal;
             }
             h3 {
               margin: 0;
-              font-size: 0.8em;
+              font-size: 0.4em;
               font-weight: bold;
             }
           }
@@ -313,6 +316,9 @@ hr {
         p:last-child {
           margin-bottom: 0;
         }
+        .blurb {
+          display: none;
+        }
       }
       .project:last-child {
         padding-bottom: 0;
@@ -327,15 +333,25 @@ hr {
         flex-wrap: wrap;
         justify-content: space-between;
         max-height: none;
-        overflow-y: auto;
         .project {
           width: calc(50% - 6px);
           .project-header {
             flex-direction: row;
             justify-content: space-between;
+            .title {
+              h2 {
+                font-size: 1.4em;
+              }
+              h3 {
+                font-size: 0.8em;
+              }
+            }
             .links {
               margin: 0;
             }
+          }
+          .blurb {
+            display: block;
           }
         }
       }

@@ -6686,9 +6686,12 @@ hr {
     margin-bottom: 0; }
   #projects .container .box {
     display: flex;
-    flex-direction: column;
-    max-height: 65%; }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: none; }
     #projects .container .box .project {
+      width: calc(50% - 6px);
       padding: 12px 0;
       border-bottom: 1px solid #353135; }
       #projects .container .box .project .project-header {
@@ -6696,11 +6699,11 @@ hr {
         display: flex;
         flex-direction: column; }
         #projects .container .box .project .project-header .title h2 {
-          font-size: 1.4em;
+          font-size: 1em;
           font-weight: normal; }
         #projects .container .box .project .project-header .title h3 {
           margin: 0;
-          font-size: 0.8em;
+          font-size: 0.4em;
           font-weight: bold; }
         #projects .container .box .project .project-header .links {
           margin-top: 6px;
@@ -6717,6 +6720,8 @@ hr {
         margin: 6px 0; }
       #projects .container .box .project p:last-child {
         margin-bottom: 0; }
+      #projects .container .box .project .blurb {
+        display: none; }
     #projects .container .box .project:last-child {
       padding-bottom: 0;
       border-bottom: none; }
@@ -6725,15 +6730,20 @@ hr {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-height: none;
-    overflow-y: auto; }
+    max-height: none; }
     #projects .container .box .project {
       width: calc(50% - 6px); }
       #projects .container .box .project .project-header {
         flex-direction: row;
         justify-content: space-between; }
+        #projects .container .box .project .project-header .title h2 {
+          font-size: 1.4em; }
+        #projects .container .box .project .project-header .title h3 {
+          font-size: 0.8em; }
         #projects .container .box .project .project-header .links {
-          margin: 0; } }
+          margin: 0; }
+      #projects .container .box .project .blurb {
+        display: block; } }
 
 #resume .container h1 {
   margin: 0; }
