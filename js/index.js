@@ -4,8 +4,12 @@ var menuIsOpen = false;
 
 function toggleMenu() {
   var newHeight = menuIsOpen ? '48px' : '100%';
-  document.getElementById('mobile').style.height = newHeight;
+  var newColor = menuIsOpen ? 'transparent' : 'rgba(255, 255, 255, 0.95)';
+  var menu = document.getElementById('mobile')
+  menu.style.height = newHeight;
+  menu.style.backgroundColor = newColor;
   menuIsOpen = !menuIsOpen;
+
 }
 
 function mScrollToPageNumber(pageNumber) {

@@ -40,9 +40,9 @@ p:last-child {
   height: 48px;
   width: 100%;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: transparent;
   overflow: hidden;
-  transition: height 0.5s;
+  transition: 0.5s;
   display: flex;
   flex-direction: column;
   .expand {
@@ -106,6 +106,7 @@ p:last-child {
   padding: 0 32px;
   flex-direction: column;
   justify-content: center;
+  overflow-y: hidden;
 }
 
 .container {
@@ -273,7 +274,6 @@ hr {
       display: flex;
       flex-direction: column;
       max-height: 65%;
-      overflow-y: scroll;
       .project {
         padding: 12px 0;
         border-bottom: 1px solid $black;
