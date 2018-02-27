@@ -1,340 +1,362 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Mao</title>
-    <link rel="shortcut icon" href="style/assets/favicon.png">
-    <link rel="stylesheet" type="text/css" href="style/normalize.css">
-    <link rel="stylesheet" type="text/css" href="style/index.css">
-    <!-- Smooth scroll provided from https://cferdinandi.github.io/smooth-scroll. -->
-    <script src="js/smooth-scroll.js"></script>
-    <!-- Disabling inertial scroll events from https://github.com/d4nyll/lethargy. -->
-    <script src="js/lethargy.js"></script>
-    <script src="js/index.js"></script>
-  </head>
-  <body>
-    <div id="desktop-content">
-      <div id="sidebar">
-        <div id="sidebar-dot-home" class="sidebar-dot"></div>
-        <div id="sidebar-dot-about" class="sidebar-dot"></div>
-        <div id="sidebar-dot-skills" class="sidebar-dot"></div>
-        <div id="sidebar-dot-projects" class="sidebar-dot"></div>
-        <div id="sidebar-dot-resume" class="sidebar-dot"></div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div id="sidebar">
+    <div id="sidebar-dot-home" class="sidebar-dot"></div>
+    <div id="sidebar-dot-about" class="sidebar-dot"></div>
+    <div id="sidebar-dot-skills" class="sidebar-dot"></div>
+    <div id="sidebar-dot-projects" class="sidebar-dot"></div>
+    <div id="sidebar-dot-resume" class="sidebar-dot"></div>
+  </div>
+  <!-- "Your selector animation is too boring -Adam" -->
+  <div id="sidebar-dot-selector-bouncing-container-for-adam">
+    <div id="sidebar-dot-selector"></div>
+  </div>
+  <header id="mobile">
+    <div class="expand" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <nav>
+      <a href="https://github.com/justinmao">GITHUB</a>
+      <a href="https://www.linkedin.com/in/justinmao/">LINKEDIN</a>
+      <hr>
+      <p onclick="mScrollToPageNumber(0)">HOME</p>
+      <p onclick="mScrollToPageNumber(1)">ABOUT</p>
+      <p onclick="mScrollToPageNumber(2)">SKILLS</p>
+      <p onclick="mScrollToPageNumber(3)">PROJECTS</p>
+      <p onclick="mScrollToPageNumber(4)">RESUME</p>
+    </nav>
+  </header>
+  <header id="desktop">
+    <nav>
+      <a href="https://github.com/justinmao">GITHUB</a>
+      <a href="https://www.linkedin.com/in/justinmao/">LINKEDIN</a>
+    </nav>
+    <nav>
+      <p onclick="pss.scrollToPageNumber(0)">HOME</p>
+      <p onclick="pss.scrollToPageNumber(1)">ABOUT</p>
+      <p onclick="pss.scrollToPageNumber(2)">SKILLS</p>
+      <p onclick="pss.scrollToPageNumber(3)">PROJECTS</p>
+      <p onclick="pss.scrollToPageNumber(4)">RESUME</p>
+    </nav>
+  </header>
+  <section id="home" class="slide">
+    <div class="container">
+      <h1>JUSTIN MAO</h2>
+      <hr>
+      <div class="box">
+        <h2>STUDENT</h2>
+        <h3>&nbsp; &middot; &nbsp;</h3>
+        <h2>PROGRAMMER</h2>
+        <h3>&nbsp; &middot; &nbsp;</h3>
+        <h2>DESIGNER</h2>
       </div>
-      <!-- "Your selector animation is too boring -Adam" -->
-      <div id="sidebar-dot-selector-bouncing-container-for-adam">
-        <div id="sidebar-dot-selector"></div>
+    </div>
+  </section>
+  <section id="about" class="slide">
+    <div class="container">
+      <h1>Hi, my name is Justin.</h1>
+      <hr>
+      <div class="box">
+        <p>I'm currently a 4th-year student studying computer science at
+          the University of Toronto.</p>
+        <p>I'm passionate about programming, design, and music.</p>
+        <p>I'm all about simplicity, efficiency, and elegance, and
+          it shows in my work.</p>
       </div>
-      <header id="navbar">
-        <nav>
-          <div class="nav-section">
-            <span><a href="https://github.com/justinmao">GITHUB</a></span>
-            <span><a href="https://www.linkedin.com/in/justinmao/">LINKEDIN</a></span>
-          </div>
-          <div class="nav-section">
-            <span id="nav-about">ABOUT</span>
-            <span id="nav-projects">PROJECTS</span>
-            <span id="nav-resume">RESUME</span>
-          </div>
-        </nav>
-      </header>
-      <div id="top-arrow-container"><div id="top-arrow"><p>^</p></div></div>
-      <main>
-        <div id="home">
-          <div id="title">
-            <h1>JUSTIN MAO</h2>
-            <h2>STUDENT &nbsp; &middot; &nbsp; PROGRAMMER &nbsp; &middot; &nbsp; DESIGNER</h2>
-          </div>
-          <footer><div id="bottom-arrow"><p>^</p></div></footer>
-        </div>
-        <div id="about">
-          <h1>Hi.</h1>
-          <h2>My name is Justin.<br></h2>
-          <h3>I'm from <span id="city">Michigan.</span></h3>
-          <span class="separator">&middot; &middot; &middot;</span>
-          <div id="about-me">
-            <h4>I am</h4>
-            <div class="vr"></div>
-            <div id="about-me-list">
-              <p>currently studying computer science at the University of Toronto.</p>
-              <p>passionate about programming, design, and music.</p>
-              <p>all about simplicity, efficiency, and elegance. It shows in my work.</p>
-            </div>
-          </div>
-          <footer><div id="about-next-arrow" class="next-arrow"><span>CONTINUE</span><p>^</p></div></footer>
-        </div>
-        <div id="skills">
-          <h1>Here's a little bit about what I can do:</h1>
-          <div id="skills-section-container">
-            <section>
-              <img src="style/assets/icon-frontend2x.png">
-              <h4>Frontend</h4>
-              <div class="skill">
-                <span>HTML5/CSS</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Javascript</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>React + Native</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>JQuery</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Angular 2+</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-            </section>
-            <section>
-              <img src="style/assets/icon-backend2x.png">
-              <h4>Backend</h4>
-              <div class="skill">
-                <span>Spring</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Node.js</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Express.js</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>SQL</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Ruby on Rails</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Flask</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-            </section>
-            <section>
-              <img src="style/assets/icon-design2x.png">
-              <h4>Design</h4>
-              <div class="skill">
-                <span>Photoshop</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <span>Illustrator</span>
-                <div class="stars">
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star-empty"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <footer><div id="skills-next-arrow" class="next-arrow"><span>SEE IT IN ACTION</span><p>^</p></div></footer>
-        </div>
-        <div id="projects">
-          <div id="card-container">
-            <div class="project-card-large">
-              <h2 style="color: #BD5551">JAVASCRIPT LIBRARY</h2>
-              <h1>page-sized-slides.js</h1>
-              <p><a href="https://github.com/justinmao/page-sized-slides">SOURCE</a>&nbsp;<a href="/page-sized-slides">DEMO</a></p>
-              <p>WORK IN PROGRESS</p>
-              <p>A lightweight library that helps developers create smooth, reactive, full-page scrolling websites.</p>
-              <p><i>Adapted from the code used to build this page!</i></p>
-            </div>
-            <div class="project-card-large">
-              <h2 style="color: #57A076">CHROME EXTENSION</h2>
-              <h1>Icebox</h1>
-              <p><a href="https://github.com/justinmao/icebox">SOURCE</a></p>
-              <p>UNRELEASED</p>
-              <p>A simple browsing session manager for Chrome, complete with accessible hotkeys.</p>
-              <p><i>Put your browsing sessions in cold storage!</i></p>
-            </div>
-            <div class="project-card-large">
-              <h2 style="color: #E4C350">MOBILE APPLICATION</h2>
-              <h1>Kanapal</h1>
-              <p><a href="https://github.com/justinmao/kanapal">SOURCE</a></p>
-              <p>UNRELEASED</p>
-              <p>An on-the-go tool for studying Japanese kana. Allows customization to aid in learning ひらがな and カタカナ.</p>
-              <p><i>Built with React Native.</i></p>
-            </div>
-            <div class="project-card-large">
-              <h2 style="color: #6B9FAA">WEB APPLICATION</h2>
-              <h1>Palette</h1>
-              <p><a href="https://github.com/justinmao/palette">SOURCE</a>&nbsp;<a href="http://104.236.97.183">DEMO</a></p>
-              <p>A web app for generating a color palette from an image.</p>
-              <p><i>Built using a MEAN stack, minus the M. Implemented using a k-means clustering algorithm.</i></p>
-            </div>
-            <div class="project-card-large">
-              <h2 style="color: #6B9FAA">WEB APPLICATION</h2>
-              <h1>Personal Website</h1>
-              <p><a href="https://github.com/justinmao/justinmao.github.io">SOURCE</a>&nbsp;<a href="http://jmao.co">DEMO</a></p>
-              <p>My online portfolio/personal portal intended to show off my technical and design capabilities.</p>
-              <p><i>This website! Built using HTML, CSS, and Javascript.</i></p>
-            </div>
-          </div>
-        </div>
-        <div id="resume">
-          <table id="resume-info">
-            <tr>
-              <th><a href="cv-02.01.18.pdf">&gt; &nbsp; PDF (&amp; MORE DETAILS)</a></th>
-            </tr>
-            <tr>
-              <th>WORK EXPERIENCE</th>
-            </tr>
-            <tr>
-              <td>June 2017 - Present</td>
-              <td>
-                <p><b>SOFTWARE ENGINEERING INTERN</b></p>
-                <p>Nissan Motors (Dongfeng Nissan Passenger Vehicle Company)</p>
-                <p>Guangzhou, China</p>
-              </td>
-            </tr>
-            <tr>
-              <td>November 2013 - January 2014 </td>
-              <td>
-                <p><b>GRAPHIC DESIGN INTERN</b></p>
-                <p>In the Cut (ITC) Integrated Marketing</p>
-                <p>Shanghai, China</p>
-              </td>
-            </tr>
-            <tr>
-              <th>EDUCATION</th>
-            </tr>
-            <tr>
-              <td>September 2014 - Present</td>
-              <td>
-                <p><b>HONOURS BSC (SPECIALIST IN COMPUTER SCIENCE)</b></p>
-                <p>University of Toronto</p>
-                <p><i>Expected graduation in June, 2018.</i></p>
-              </td>
-            </tr>
-            <tr>
-              <td>August 2012 - May 2014</td>
-              <td>
-                <p><b>INTERNATIONAL BACCALAUREATE (IB) DIPLOMA</b></p>
-                <p>Shanghai American School</p>
-                <p><i>Higher levels in physics, visual arts, and literature.</i></p>
-              </td>
-            </tr>
-            <tr>
-              <th>EXTRACURRICULARS</th>
-            </tr>
-            <tr>
-              <td>August 2016 - Present</td>
-              <td>
-                <p><b>CREATIVE &amp; MEDIA DIRECTOR</b></p>
-                <p>Jane Goodall's Roots &amp; Shoots: UofT Chapter</p>
-              </td>
-            </tr>
-            <tr>
-              <th>VOLUNTEER WORK</th>
-            </tr>
-            <tr>
-              <td>October 2013</td>
-              <td>
-                <p><b>TEAM LEADER/VOLUNTEER</b></p>
-                <p>Habitat for Humanity</p>
-                <p>Bali, Indonesia</p>
-              </td>
-            </tr>
-            <tr>
-              <td>March 2011</td>
-              <td>
-                <p><b>VOLUNTEER</b></p>
-                <p>Habitat for Humanity</p>
-                <p>Sri Lanka</p>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </main>
     </div>
-    <div id="mobile-content">
-      <h1>Oops!</h1>
-      <p>This website doesn't yet support your resolution.</p>
-      <p>MINIMUM: 675x750 PX</p>
-      <p id="current-resolution"></p>
+  </section>
+  <section id="skills" class="slide">
+    <div class="container">
+      <h1>Here's a little bit about what I can do.</h1>
+      <hr>
+      <div class="box">
+        <section>
+          <img src="assets/icon-frontend2x.png">
+          <h2>Frontend</h2>
+          <div class="skillset">
+            <div class="skill">
+              <p>HTML5/SASS/RWD</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Javascript ES6</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>React.js</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Angular 2+</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>AngularJS</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>jQuery</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Bootstrap</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Semantic UI</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <img src="assets/icon-backend2x.png">
+          <h2>Backend</h2>
+          <div class="skillset">
+          <div class="skill">
+            <p>Node.js</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>Express.js</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>Spring</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>SQL</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>MongoDB</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>RESTful APIs</p>
+            <div class="stars">
+              <div class="star empty"></div>
+              <div class="star empty"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section>
+          <img src="assets/icon-design2x.png">
+          <h2>Design</h2>
+          <div class="skillset">
+            <div class="skill">
+              <p>Photoshop</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Illustrator</p>
+              <div class="stars">
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star empty"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-  </body>
+  </section>
+  <section id="projects" class="slide">
+    <div class="container">
+      <h1>Here are some projects I've worked on.</h1>
+      <hr>
+      <div class="box">
+        <div class="project">
+          <div class="project-header">
+            <div class="title">
+              <h2>page-sized-slides.js</h2>
+              <h3>JAVASCRIPT LIBRARY</h3>
+            </div>
+            <div class="links">
+              <a href="https://github.com/justinmao/page-sized-slides">SOURCE</a>
+              <a href="/page-sized-slides">DEMO</a>
+            </div>
+          </div>
+          <p>A lightweight library for creating smooth, reactive, full-page
+            scrolling websites</p>
+          <p><i>Used to build this page!</i></p>
+        </div>
+        <div class="project">
+          <div class="project-header">
+            <div class="title">
+              <h2>Icebox</h2>
+              <h3>CHROME EXTENSION</h3>
+            </div>
+            <div class="links">
+              <a href="https://github.com/justinmao/icebox">SOURCE</a>
+            </div>
+          </div>
+          <p>UNRELEASED</p>
+          <p>A simple browsing session manager for Chrome, complete with
+            accessible hotkeys.</p>
+          <p><i>Put your browsing sessions in cold storage!</i></p>
+        </div>
+        <div class="project">
+          <div class="project-header">
+            <div class="title">
+              <h2>Kanapal</h2>
+              <h3>REACT NATIVE MOBILE APPLICATION</h3>
+            </div>
+            <div class="links">
+              <a href="https://github.com/justinmao/icebox">SOURCE</a>
+            </div>
+          </div>
+          <p>UNRELEASED</p>
+          <p>An on-the-go tool for studying Japanese kana. Allows customization
+            to aid in learning ひらがな and カタカナ.</p>
+        </div>
+        <div class="project">
+          <div class="project-header">
+            <div class="title">
+              <h2>Palette</h2>
+              <h3>WEB APPLICATION</h3>
+            </div>
+            <div class="links">
+              <a href="https://github.com/justinmao/palette">SOURCE</a>
+              <a href="http://104.236.97.183/">DEMO</a>
+            </div>
+          </div>
+          <p>A web app for generating a color palette from an image,
+            implemented using a k-means clustering algorithm.</p>
+        </div>
+        <div class="project">
+          <div class="project-header">
+            <div class="title">
+              <h2>Personal Website</h2>
+              <h3>WEB APPLICATION</h3>
+            </div>
+            <div class="links">
+              <a href="https://github.com/justinmao/justinmao.github.io">SOURCE</a>
+              <a href="/">DEMO</a>
+            </div>
+          </div>
+          <p>My online portfolio/personal portal.</p>
+          <p><i>This website!</i></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="resume" class="slide">
+    <div class="container">
+      <h1>Summary of Qualifications</h1>
+      <hr>
+      <div class="box">
+        <p>&gt; &nbsp; <a href="files/cv-02-06-18.pdf">PDF Resume</a></p>
+        <p>Summer internship experience in software development in an agile
+          environment at a major corporation.</p>
+        <p>Startup experience developing an online platform for a hybrid/online
+          fitness company.</p>
+        <p>Design skills developed as Creative & Media Director of the Jane
+          Goodall Institute’s Roots & Shoots: University of Toronto Chapter.</p>
+        <p>Leadership in volunteer work through Habitat for Humanity
+          International in Sri Lanka and Indonesia.</p>
+        <p>Bilingual in English and Mandarin Chinese.</p>
+        <p>US citizen.</p>
+      </div>
+    </div>
+  </section>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="js/page-sized-slides.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
 </html>
